@@ -33,7 +33,7 @@
                         <div class="form-group mb-3">
                             <label for="">Gambar</label>
                             <input type="file" name="gambar" class="form-control">
-                            <img src="{{ asset('uploads/books/'.$book->gambar) }}" width="70px" height="70px" alt="Image">
+                            <img src="{{ asset('uploads/books/'.$book->gambar) }}" width="120px" height="180px" alt="Image">
                         </div>
                     </div>
               <div class="box-footer">

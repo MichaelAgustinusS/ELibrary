@@ -8,7 +8,7 @@
             </span>
             </a>
         <ul class="treeview-menu">
-            <li><a href="/"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li><a href="{{ url('home') }}"><i class="fa fa-circle-o"></i> Home</a></li>
             <li><a href="{{ url('books') }}"><i class="fa fa-circle-o"></i> Data Buku</a></li>
         </ul>
     </li>

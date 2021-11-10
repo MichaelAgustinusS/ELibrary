@@ -8,9 +8,23 @@ use Illuminate\Support\Facades\File;
 
 class BookController extends Controller
 {
-    public function index()
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+    
+    public function index(Request $request)
+    {
+        if($request->has('search')){
+            $book = Book::where('judul','LIKE','%'.$request->search.'%')->get();
+        }else{
         $book = Book::all();
+        }
         return view('book.index', compact('book'));
     }
 

@@ -35,7 +35,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="/" class="logo">
+    <a href="{{ url('home') }}" class="logo">
       <span class="logo-mini"><i class="fa fa-book"></i></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>E</b>Library</span>
@@ -52,17 +52,20 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="{{ asset('uploads')}}/books.png" class="img-circle" alt="User Image">
-                <p>Alexander Pierce - User</p>
+                <p>{{ Auth::user()->name }}</p>
               </li>
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                  <button type="submit" class="btn btn-default btn-flat">Logout</button>
+                </form>
                 </div>
               </li>
             </ul>
