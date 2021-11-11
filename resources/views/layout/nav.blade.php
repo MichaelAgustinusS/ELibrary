@@ -8,8 +8,12 @@
             </span>
             </a>
         <ul class="treeview-menu">
-            <li><a href="{{ url('home') }}"><i class="fa fa-circle-o"></i> Home</a></li>
+        <li><a href="{{ url('home') }}"><i class="fa fa-circle-o"></i> Home</a></li>
+        @if (auth()->user()->level==1)
             <li><a href="{{ url('books') }}"><i class="fa fa-circle-o"></i> Data Buku</a></li>
+        @elseif(auth()->user()->level==2)
+            <li><a href="{{ url('bookuser') }}"><i class="fa fa-circle-o"></i> Data Buku</a></li>
+        @endif
         </ul>
     </li>
 </ul>

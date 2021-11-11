@@ -1,10 +1,9 @@
 @extends('layout.template')
-@section('title', 'Data Buku - Admin')
+@section('title', 'Data Buku - User')
 
 @section('content')
 <div class="box">
-        <div class="box-header">
-          <a href="{{ url('add-book') }}" class="btn bg-navy margin">Add Buku</a>
+<div class="box-header">
           <a href="{{ url('books') }}" class="btn bg-navy margin">Refresh</a>
             <div class="box-tools">
             <form action="{{ url('books') }}" method="GET">
@@ -17,7 +16,7 @@
             </form>
             </div>
         </div>
-        <div class="box-body">
+<div class="box-body">
         @foreach ($book as $item)
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="info-box">
@@ -27,12 +26,11 @@
                   <span class="info-box-number">{{ $item->judul }}</span>
                   <span class="info-box-text"><b>Pengarang :</b> {{ $item->pengarang }}</span>
                   <span class="info-box-text"><b>Penerbit  :</b> {{ $item->penerbit }}</span>
-                  <a href="{{ url('edit-book/'.$item->id) }}" class="btn bg-navy margin btn-sm">Edit</a>
-                  <a href="{{ url('delete-book/'.$item->id) }}" class="btn bg-navy margin btn-sm">Hapus</a>
+                  <a href="https://myanimelist.net/" class="btn bg-navy margin btn-sm">Source</a>
                 </div>
             </div>
           </div>
         @endforeach
-        </div>
+        </div>  
     </div>
 @endsection

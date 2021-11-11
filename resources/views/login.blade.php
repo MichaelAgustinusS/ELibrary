@@ -31,7 +31,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{asset('template')}}/index2.html">LOGIN</a>
+    <a href="#">LOGIN</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

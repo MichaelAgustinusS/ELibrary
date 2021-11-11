@@ -28,6 +28,16 @@ class BookController extends Controller
         return view('book.index', compact('book'));
     }
 
+    public function index2(Request $request)
+    {
+        if($request->has('search')){
+            $book = Book::where('judul','LIKE','%'.$request->search.'%')->get();
+        }else{
+        $book = Book::all();
+        }
+        return view('book.index_user', compact('book'));
+    }
+
     public function create()
     {
         return view('book.create');
