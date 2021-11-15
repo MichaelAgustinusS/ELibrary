@@ -14,7 +14,7 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->id('id_buku');
+            $table->id('id');
             $table->string('judul');
             $table->string('pengarang');
             $table->string('penerbit');
